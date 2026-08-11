@@ -2,6 +2,13 @@
 <html lang="pt-br">
 
 <head>
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+    <!-- Fonte do Google - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,10 +17,11 @@
         content="Portifólio do Higor Damasceno Stella, desenvolvedor web e entusiasta de tecnologia.">
     <meta name="robots" content="index, follow">
 
+    <!-- SWIPER CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-    <!--<script type="module" src="/src/main.tsx"></script>-->
-    <link rel="stylesheet" href="/src/index.css">
-
+    <!-- CSS principal da página -->
+    <link rel="stylesheet" href="./assets/docs/css/css/styles.css">
     <title>Portifólio do Higor</title>
 
 </head>
@@ -27,7 +35,7 @@
             <nav>
                 <ul class="menu-list">
                     <li><a href="index.html#hero">Início</a></li>
-                    <li><a href="index.html#about">Sobre mim</a></li>
+                    <li><a href="index.html#about">Sobre</a></li>
                     <li><a href="index.html#projects">Projetos</a></li>
                     <li><a href="index.html#contact">Contato</a></li>
                 </ul>
@@ -42,7 +50,9 @@
         <section id="hero" class="section-container hero-container">
 
             <!--Boas Vindas-->
-            <article>
+
+
+            <article class="hero-content">
                 <span>👋 Olá, eu sou o Higor!</span>
                 <h1>Desenvolvedor Web</h1>
                 <p>
@@ -64,51 +74,13 @@
 
             <!--Imagem da Seção Hero-->
             <figure class="hero-image">
-                <img src="./assets/img/foto_dev_man.svg" width="300" height="300" alt="Foto do autor do site"
-                    class="float-animation">
+                <img src="./assets/img/Higor_pc.png" alt="Foto do autor do site" class="float-animation">
             </figure>
         </section>
 
         <!-- Seção sobre mim -->
         <section id="about" class="section-container about-container">
 
-            <!--Imagem da Seção About-->
-            <figure class="about-image">
-                <img src="./assets/img/avatar_dev_man.svg" width="300px" alt="Foto do autor do site">
-            </figure>
-
-            <!-- Conteúdo da Seção About -->
-            <article class="about-content">
-                <h2>Sobre mim</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor,
-                    nisl eget ultricies aliquet,
-                    nunc nisl aliquam nunc, vitae aliquam nisl nunc vitae nisl.
-                </p>
-                <!--Links (github + Curriculo) e dados do github-->
-                <div class="about-buttons-data">
-
-                    <!-- Links-->
-                    <div class="buttons-container">
-                        <a href="https://github.com/Higormu2" target="_blank" class="botao">GitHub</a>
-                        <a href="#" target="_blank" class="botao-outline">Curriculo</a>
-                    </div>
-
-                    <!-- Dados - Repositório github-->
-                    <div class="data-container">
-                        <div class="data-item">
-                            <span class="data-number">100</span>
-                            <span class="data-label">Seguidores</span>
-                        </div>
-
-                        <!--Numero de Repositorios Publicos-->
-                        <div class="data-item">
-                            <span class="data-number">10</span>
-                            <span class="data-label">Repositórios</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
 
         </section>
 
@@ -122,53 +94,14 @@
             <div class="swiper projects-swiper">
                 <div class="swiper-wrapper">
 
-                    <div class="swiper-slide">
-
-                        <article class="project-card">
-
-                            <!-- Ícone da Tecnologia padrão do projeto -->
-                            <figure class="project-image">
-                                <img src="./assets/icons/languages/github.svg" alt="Ícone do GitHub"
-                                width="50" height="50"
-                                >
-                                
-                            </figure>
-
-                            <!-- Conteúdo do Projeto -->
-                            <div class="project-content">
-
-                                <h3>Projeto GitHub</h3>
-                                <p>Projeto desenvolvido no GitHub</p>
-
-                                <!-- Tags do Projeto -->
-                                <div class="project-tags">
-                                    <span class="tag">GitHub</span>
-                                </div>
-
-                                <!-- Links do Projeto -->
-                                <div class="project-buttons">
-                                    <a href="#" target="_blank" class="botao botao-sm">
-                                        GitHub
-                                    </a>
-                                    <a href="#" target="_blank" class="botao-outline botao-sm">
-                                        Deploy
-                                    </a>
-                                </div>
-
-                            </div>
-
-                        </article>
-
                 </div>
 
-            </div>
+                <!-- Botões de Navegação -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
 
-            <!-- Botões de Navegação -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-            <!-- Paginação -->
-            <div class="swiper-pagination"></div>
+                <!-- Paginação -->
+                <div class="swiper-pagination"></div>
 
             </div>
 
@@ -187,33 +120,29 @@
 
             <!-- Links para as Redes Sociais -->
             <div class="social-container">
-                <a href="http://linkedin.com/in/higor-muniz/" target="_blank" class="social-icon" aria-label="LinkedIn">
-                    <img 
-                        src="./assets/icons/social/linkedin.svg"
-                        alt="Link para o Linkedin"
-                    >    
+                <a href="https://www.linkedin.com/in/higordamascenostella/" target="_blank" class="social-icon"
+                    aria-label="LinkedIn">
+                    <img src="./assets/icons/social/linkedin.svg" alt="Link para o Linkedin">
                 </a>
 
                 <a href="https://github.com/Higormu2" target="_blank" class="social-icon" aria-label="GitHub">
-                    <img 
-                        src="./assets/icons/social/github.svg"
-                        alt="Link para o GitHub"
-                    >    
+                    <img src="./assets/icons/social/github.svg" alt="Link para o GitHub">
                 </a>
 
                 <a href="#" target="_blank" class="social-icon" aria-label="Instagram">
-                    <img 
-                        src="./assets/icons/social/instagram.svg"
-                        alt="Link para o Instagram"
-                    >    
+                    <img src="./assets/icons/social/instagram.svg" alt="Link para o Instagram">
                 </a>
             </div>
 
             <!-- Formulário de Contato -->
-            <form action="#" method="post" class="contact-form">
+            <form id="formulario" action="https://formsubmit.co/higordamascenostella@gmail.com" method="POST">
+
+                <input type="hidden" name="_next" value="https://higordamascenostella.github.io/Portifolio/assets/docs/html/success.html">
+                <input type="hidden" name="_captcha" value="false">
+
                 <label for="name">Nome:</label>
                 <input type="text" id="name" name="name" required placeholder="Digite seu nome completo">
-                <span id ="name-error" class="error-message"></span>
+                <span id="name-error" class="error-message"></span>
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required placeholder="Digite seu email">
@@ -227,7 +156,7 @@
                 <textarea id="message" name="message" rows="5" required placeholder="Digite sua mensagem"></textarea>
 
 
-                
+
                 <button type="submit" class="botao">Enviar</button>
             </form>
 
@@ -242,6 +171,12 @@
         Desenvolvido por Higor Damasceno Stella &copy; 2024. Todos os direitos reservados.
 
     </footer>
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Script principal da página -->
+    <script src="./script.js"></script>
 
 </body>
 
