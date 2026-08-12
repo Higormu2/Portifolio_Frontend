@@ -4,7 +4,7 @@ const swiperWrapper = document.querySelector(".swiper-wrapper")
 
 // Formulário
 const formulario = document.querySelector('#formulario')
- 
+
 // Expressão Regular de validação do e-mail
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
@@ -224,67 +224,82 @@ async function getProjectsGithub() {
             })
         }
 
-        formulario.addEventListener('submit', function (event) {
-	event.preventDefault()
- 
-	document
-		.querySelectorAll('form span')
-		.forEach((span) => (span.innerHTML = ''))
- 
-	let isValid = true
- 
-	const name = document.querySelector('#name')
-	const erroName = document.querySelector('#erro-name')
- 
-	if (name.value.trim().length < 3) {
-		erroName    .innerHTML = 'O nome deve ter no mínimo 3 caracteres'
-		if (isValid) name.focus()
-		isValid = false
-	}
- 
-	const email = document.querySelector('#email')
-	const erroEmail = document.querySelector('#erro-email')
- 
-	if (!email.value.trim().match(emailRegex)) {
-		erroEmail.innerHTML = 'Digite um endereço de e-mail válido'
-		if (isValid) email.focus()
-		isValid = false
-	}
- 
-	const assunto = document.querySelector('#assunto')
-	const erroAssunto = document.querySelector('#erro-assunto')
- 
-	if (assunto.value.trim().length < 5) {
-		erroAssunto.innerHTML =
-			'O assunto deve ter no mínimo 5 caracteres'
-		if (isValid) assunto.focus()
-		isValid = false
-	}
- 
-	const message= document.querySelector('#message')
-	const erromessage = document.querySelector('#erro-message')
- 
-	if (message.value.trim().length === 0) {
-		erromessage.innerHTML = 'A mensagem não pode ser vazia'
-		if (isValid) message.focus()
-		isValid = false
-	}
- 
-	if (isValid) {
-		const submitButton = formulario.querySelector(
-			'button[type="submit"]',
-		)
-		submitButton.disabled = true
-		submitButton.textContent = 'Enviando...'
- 
-		formulario.submit()
-	}
-})
-
     } catch (error) {
         console.error("Error ao buscar os dados dos projetos no GitHub:", error);
     }
 }
+
+// Validação e envio do Formulário de Contato
+formulario.addEventListener('submit', function (event) {
+    event.preventDefault()
+
+    document
+        .querySelectorAll('form span')
+        .forEach((span) => (span.innerHTML = ''))
+
+    let isValid = true
+
+    const nome = document.querySelector('#name')
+    const erroNome = document.querySelector('#name-error')
+
+    if (nome.value.trim().length < 3) {
+        erroNome.innerHTML = 'O nome deve ter no mínimo 3 caracteres'
+        if (isValid) nome.focus()
+        isValid = false
+    }
+
+    const email = document.querySelector('#email')
+    const erroEmail = document.querySelector('#email-error')
+
+    if (!email.value.trim().match(emailRegex)) {
+        erroEmail.innerHTML = 'Digite um endereço de e-mail válido'
+        if (isValid) email.focus()
+        isValid = false
+    }
+
+    const assunto = document.querySelector('#assunto')
+    const erroAssunto = document.querySelector('#assunto-error')
+
+    if (assunto.value.trim().length < 5) {
+        erroAssunto.innerHTML =
+            'O assunto deve ter no mínimo 5 caracteres'
+        if (isValid) assunto.focus()
+        isValid = false
+    }
+
+    const mensagem = document.querySelector('#message')
+    const erroMensagem = document.querySelector('#message-error')
+
+    if (mensagem.value.trim().length === 0) {
+        erroMensagem.innerHTML = 'A mensagem não pode ser vazia'
+        if (isValid) mensagem.focus()
+        isValid = false
+    }
+
+    if (isValid) {
+        const submitButton = formulario.querySelector(
+            'button[type="submit"]',
+        )
+        submitButton.disabled = true
+        submitButton.textContent = 'Enviando...'
+
+        formulario.submit()
+    }
+})
+
+// Scroll suave até o final da seção de Contato, garantindo que o botão de enviar fique visível
+document.querySelectorAll('a[href="#contact"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        //event.preventDefault()
+        const contato = document.querySelector('#contact')
+        if (contato) {
+            contato.scrollIntoView({ behavior: 'smooth', block: 'end' })
+            setTimeout(() => {
+                window.scrollBy({ top: 40, behavior: 'smooth' })
+            }, 400)
+        }
+    })
+})
 
 getAboutGithub();
 getProjectsGithub();
