@@ -283,7 +283,7 @@ formulario.addEventListener('submit', function (event) {
         submitButton.disabled = true
         submitButton.textContent = 'Enviando...'
 
-        formulario.submit()
+        HTMLFormElement.prototype.submit.call(formulario)
     }
 })
 
