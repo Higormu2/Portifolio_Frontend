@@ -283,14 +283,14 @@ formulario.addEventListener('submit', function (event) {
         submitButton.disabled = true
         submitButton.textContent = 'Enviando...'
 
-        HTMLFormElement.prototype.submit.call(formulario)
+        formulario.submit()
     }
 })
 
 // Scroll suave até o final da seção de Contato, garantindo que o botão de enviar fique visível
 document.querySelectorAll('a[href="#contact"]').forEach((link) => {
     link.addEventListener('click', (event) => {
-        event.preventDefault()
+        //event.preventDefault()
         const contato = document.querySelector('#contact')
         if (contato) {
             contato.scrollIntoView({ behavior: 'smooth', block: 'end' })
